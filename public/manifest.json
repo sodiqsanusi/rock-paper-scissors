@@ -1,6 +1,14 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Rock, Paper, Scissors",
+  "name": "Rock, Paper, Scissors",
+  "orientation": "portrait-primary",
+  "categories": ["games", "entertainment"],
+  "description": "Can you beat our AI in this simple game? Rock, Paper, Scissors!",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "hsl(217, 16%, 45%)",
+  "background_color": "hsl(214, 47%, 23%)",
+  "id":"/",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,9 +25,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
