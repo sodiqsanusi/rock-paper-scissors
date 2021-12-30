@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Rules from "./components/Rules";
 import FirstPage from "./pages/FirstPage";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <Header />
       <FirstPage />
+      <Rules />
     </div>
   );
 }

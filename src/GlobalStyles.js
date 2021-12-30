@@ -14,8 +14,12 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Barlow Semi Condensed', sans-serif;
   }
   body{
+    position: relative;
     background-color: hsl(214, 47%, 23%);
-    /* background-image: linear-gradient(to bottom right, hsl(214, 47%, 23%), hsl(237, 49%, 15%) 75%); */
+    background-image: linear-gradient(to bottom right, hsl(214, 47%, 23%), hsl(237, 49%, 15%) 75%);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
   }
   img{
     width: 100%;
