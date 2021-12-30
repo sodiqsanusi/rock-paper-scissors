@@ -12,7 +12,7 @@ export const RulesBtn = styled.button`
   padding: .3em 3em;
   border: 1px #fff solid;
   border-radius: 8px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   letter-spacing: 1.5px;
   transition: .3s;
   margin-top: 3em;
