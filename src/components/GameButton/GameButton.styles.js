@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.button`
-  width: 45%;
+  width: 40%;
   padding: 2em;
   border: 20px solid ${({lightColor}) => lightColor};
   border-radius: 100%;

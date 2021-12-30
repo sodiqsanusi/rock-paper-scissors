@@ -26,7 +26,7 @@ export const Section2 = styled.section`
   background-color: #fff;
   border-radius: 8px;
   flex-direction: column;
-  padding: 1em;
+  padding: .5em 1em;
   width: 40%;
   max-width: 150px;
   p{

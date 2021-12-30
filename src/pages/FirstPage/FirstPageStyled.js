@@ -7,7 +7,8 @@ export const Wrapper = styled.main`
   padding: 0 1em;
   background-image: url(${bgTriangle});
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: 50% 50%;
+  background-size: 60%;
 `;
 export const Div1 = styled.div`
   width: 100%;
