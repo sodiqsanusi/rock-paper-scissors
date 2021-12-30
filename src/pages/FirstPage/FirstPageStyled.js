@@ -9,6 +9,14 @@ export const Wrapper = styled.main`
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 60%;
+  button{
+    transition: .3s;
+    cursor: pointer;
+    :hover,:focus{
+      transform: scale(0.8);
+      filter: grayscale(100%);
+    }
+  }
 `;
 export const Div1 = styled.div`
   width: 100%;

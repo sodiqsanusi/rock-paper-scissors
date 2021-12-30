@@ -9,13 +9,13 @@ export const RulesBtn = styled.button`
   color: #fff;
   width: 30%;
   max-width: 40px;
-  padding: .3em 3em;
+  padding: .5em 3em;
   border: 1px #fff solid;
   border-radius: 8px;
   font-size: 1rem;
   letter-spacing: 1.5px;
   transition: .3s;
-  margin-top: 3em;
+  margin-top: 4em;
   :hover,:focus{
     transform: scale(0.8);
     opacity: 20%;
