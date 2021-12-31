@@ -13,7 +13,7 @@ export const Wrapper = styled.main`
     transition: .3s;
     cursor: pointer;
     :hover,:focus{
-      transform: scale(0.8);
+      transform: scale(0.9);
       filter: grayscale(100%);
     }
   }

@@ -16,8 +16,9 @@ export const RulesBtn = styled.button`
   letter-spacing: 1.5px;
   transition: .3s;
   margin-top: 4em;
+  margin-bottom: 20vh;
   :hover,:focus{
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 20%;
   }
   @media(min-width: 700px){

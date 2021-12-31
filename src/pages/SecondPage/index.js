@@ -1,27 +1,36 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { GlobalContext } from '../../GlobalContext';
 import GameButton from "../../components/GameButton";
 import scissorsImg from '../../images/icon-scissors.svg';
 import rockImg from '../../images/icon-rock.svg';
 import paperImg from '../../images/icon-paper.svg';
-import { Container, Wrapper } from "./SecondPage.styles";
+import { Container, LastSection, Wrapper } from "./SecondPage.styles";
 
 const SecondPage = () => {
+  let {scores, setScores} = useContext(GlobalContext);
+  let mainScores = scores;
+
   const {chosen} = useParams()
   const whatWasChosen = {
     paper: {
       image: paperImg,
       lightColor: 'hsl(230, 89%, 65%)',
-      darkColor: 'hsl(230, 89%, 62%)'
+      darkColor: 'hsl(230, 89%, 62%)',
+      type: 'paper'
     },
     scissors: {
       image: scissorsImg,
       lightColor: 'hsl(40, 84%, 53%)',
-      darkColor: 'hsl(40, 84%, 49%)'
+      darkColor: 'hsl(40, 84%, 49%)',
+      type: 'scissors'
     },
     rock: {
       image: rockImg,
       lightColor: 'hsl(349, 70%, 56%)',
-      darkColor: 'hsl(349, 70%, 52%)'
+      darkColor: 'hsl(349, 70%, 52%)',
+      type: 'rock'
     }
   }
   let playerChose;
@@ -55,17 +64,36 @@ const SecondPage = () => {
     computerChose = whatWasChosen.rock
     break;
   }
+  let winOrLose;
+  console.log(playerChose, computerChose)
+  if(playerChose.type === computerChose.type){
+    winOrLose = 'DRAWED';
+    setScores(mainScores)
+  }else if((playerChose.type === 'rock' && computerChose.type === 'scissors') || (playerChose.type === 'scissors' && computerChose.type === 'paper') || (playerChose.type === 'paper' && computerChose.type === 'rock')) {
+    winOrLose = 'WIN';
+    mainScores++
+    setScores(mainScores)
+  }else{
+    winOrLose = 'LOSE';
+    mainScores--
+    setScores(mainScores)
+  }
+
 
   return ( 
     <Wrapper>
       <Container>
-        <div><GameButton image={playerChose.image} lightColor={playerChose.lightColor} darkColor={playerChose.darkColor} type={chosen}/></div>
+        <div><GameButton image={playerChose.image} lightColor={playerChose.lightColor} darkColor={playerChose.darkColor} type={playerChose.type}/></div>
         <h3>YOU PICKED</h3>
       </Container>
       <Container>
-        <aside><GameButton image={computerChose.image} lightColor={computerChose.lightColor} darkColor={computerChose.darkColor} type={chosen}/></aside>
+        <aside><GameButton image={computerChose.image} lightColor={computerChose.lightColor} darkColor={computerChose.darkColor} type={computerChose.type}/></aside>
         <h3>THE HOUSE PICKED</h3>
       </Container>
+      <LastSection>
+        <p>{`YOU ${winOrLose}!`}</p>
+        <Link to='/'><button>PLAY AGAIN</button></Link>
+      </LastSection>
     </Wrapper>
    );
 }

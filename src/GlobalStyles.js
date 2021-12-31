@@ -19,7 +19,9 @@ const GlobalStyles = createGlobalStyle`
     background-image: linear-gradient(to bottom right, hsl(214, 47%, 23%), hsl(237, 49%, 15%) 75%);
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    @media(min-width: 700px){
+      height: 100vh;
+    }
   }
   img{
     width: 100%;
