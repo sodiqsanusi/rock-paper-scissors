@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import {GlobalContext} from './GlobalContext';
+import {useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import MainRules from "./components/MainRules";
@@ -9,7 +8,7 @@ import SecondPage from "./pages/SecondPage";
 
 function App() {
 
-  const {isRulesOpen} = useContext(GlobalContext);
+  const rules = useSelector(state => state.rules.value);
 
   return (
     <Router>
@@ -20,7 +19,7 @@ function App() {
           <Route path='/chose/:chosen' element={<SecondPage />} />
         </Routes>
         <Rules />
-        {isRulesOpen && <MainRules />}
+        {rules && <MainRules />}
       </div>
     </Router>
   );

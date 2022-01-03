@@ -1,11 +1,11 @@
 import { RulesBtn } from "./Rules.styles";
-import { useContext } from "react";
-import {GlobalContext} from '../../GlobalContext';
+import { useDispatch } from "react-redux";
+import {open} from '../../state/slices/rulesSlice';
 
 const Rules = () => {
-  const {makeRulesOpen} = useContext(GlobalContext);
+  const dispatch = useDispatch();
   return ( 
-    <RulesBtn onClick={() => makeRulesOpen(true)}>
+    <RulesBtn onClick={() => dispatch(open())}>
       RULES
     </RulesBtn>
    );

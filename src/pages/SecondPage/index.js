@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
-import { GlobalContext } from '../../GlobalContext';
 import GameButton from "../../components/GameButton";
 import scissorsImg from '../../images/icon-scissors.svg';
 import rockImg from '../../images/icon-rock.svg';
@@ -9,8 +7,6 @@ import paperImg from '../../images/icon-paper.svg';
 import { Container, LastSection, Wrapper } from "./SecondPage.styles";
 
 const SecondPage = () => {
-  let {scores, setScores} = useContext(GlobalContext);
-  let mainScores = scores;
 
   const {chosen} = useParams()
   const whatWasChosen = {
@@ -65,19 +61,13 @@ const SecondPage = () => {
     break;
   }
   let winOrLose;
-  console.log(playerChose, computerChose)
-  if(playerChose.type === computerChose.type){
-    winOrLose = 'DRAWED';
-    setScores(mainScores)
-  }else if((playerChose.type === 'rock' && computerChose.type === 'scissors') || (playerChose.type === 'scissors' && computerChose.type === 'paper') || (playerChose.type === 'paper' && computerChose.type === 'rock')) {
-    winOrLose = 'WIN';
-    mainScores++
-    setScores(mainScores)
-  }else{
-    winOrLose = 'LOSE';
-    mainScores--
-    setScores(mainScores)
-  }
+    if(playerChose.type === computerChose.type){
+      winOrLose = 'DRAWED';
+    }else if((playerChose.type === 'rock' && computerChose.type === 'scissors') || (playerChose.type === 'scissors' && computerChose.type === 'paper') || (playerChose.type === 'paper' && computerChose.type === 'rock')) {
+      winOrLose = 'WIN';
+    }else{
+      winOrLose = 'LOSE';
+    }
 
 
   return ( 
