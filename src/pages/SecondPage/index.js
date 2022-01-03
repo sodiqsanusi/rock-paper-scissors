@@ -5,8 +5,12 @@ import scissorsImg from '../../images/icon-scissors.svg';
 import rockImg from '../../images/icon-rock.svg';
 import paperImg from '../../images/icon-paper.svg';
 import { Container, LastSection, Wrapper } from "./SecondPage.styles";
+import {useDispatch} from 'react-redux';
+import {increment, decrement} from '../../state/slices/scoreSlice';
+import { useEffect } from "react";
 
 const SecondPage = () => {
+  const dispatch = useDispatch();
 
   const {chosen} = useParams()
   const whatWasChosen = {
@@ -68,6 +72,16 @@ const SecondPage = () => {
     }else{
       winOrLose = 'LOSE';
     }
+
+    useEffect(()=>{
+      setTimeout(() => {
+        if(winOrLose === 'WIN'){
+        dispatch(increment());
+        }if(winOrLose === 'LOSE'){
+          dispatch(decrement());
+          }
+      }, 800);
+    })
 
 
   return ( 

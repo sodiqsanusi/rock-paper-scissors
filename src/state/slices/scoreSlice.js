@@ -1,16 +1,16 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = {value: true};
+const initialState = {value: 0};
 
 export const scoreSlice = createSlice({
   name: 'scores',
   initialState,
   reducers: {
     increment: (state) =>{
-      state.value= true;
+      state.value+=1;
     },
     decrement: (state) => {
-      state.value= false;
+      state.value-=1;
     }
   }
 })
