@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-<!--   - [Screenshot](#screenshot) -->
+  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -27,9 +27,9 @@ Users should be able to:
 - Play Rock, Paper, Scissors against the computer
 - [ ] Maintain the state of the score after refreshing the browser (IN PROGRESS)
 
-<!-- ### Screenshot
+### Screenshot
 
-![](./screenshot.jpg) -->
+![](./screenshot.png)
 
 ### Links
 
